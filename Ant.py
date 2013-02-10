@@ -50,25 +50,25 @@ BKAzLFmdAQEAOw=='''
         foo = random.randint(0, 3)
         if foo == 0:
             new_x = self.x+1
-            if valid_move(new_x, self.y):
+            if self.valid_move(new_x, self.y):
                 self.x = new_x
             else:
                 self.make_rand_move()
         if foo == 1:
             new_x = self.x-1
-            if valid_move(new_x, self.y):
+            if self.valid_move(new_x, self.y):
                 self.x = new_x
             else:
                 self.make_rand_move()
         if foo == 2:
             new_y = self.y+1
-            if valid_move(self.x, new_y):
+            if self.valid_move(self.x, new_y):
                 self.y = new_y
             else:
                 self.make_rand_move()
         if foo == 3:
             new_y = self.y-1
-            if valid_move(self.x, new_y):
+            if self.valid_move(self.x, new_y):
                 self.y = new_y
             else:
                 self.make_rand_move()
