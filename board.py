@@ -1,5 +1,6 @@
 import Tkinter as tk
 import Ant
+import time
 
 class GameBoard(tk.Frame):
     def __init__(self, parent, rows=20, columns=20, size=16, color1="white", color2="white"):
@@ -236,8 +237,13 @@ if __name__ == "__main__":
     ant1 = Ant.Ant(0,0,board2,20)
     board.addpiece("ant1", antIMG, ant1.x, ant1.y)
 
-    ant1.make_rand_move()
-    board.addpiece("ant1", antIMG, ant1.x, ant1.y)
-
 
     root.mainloop()
+
+    ii = 0
+    while True:
+        ant1.make_rand_move()
+        board.addpiece("ant1", antIMG, ant1.x, ant1.y)
+        time.sleep(0.5)
+
+
