@@ -22,7 +22,6 @@ AAh3APcJFJNJoMBMYgwqEzgpobKFBAUqi1FwHxo0AACgSbgvU4x9FPcRy5hx4aQbBsXEIEkyxo16
 BqERg7YiY4yHBnPuu2FTJ8ufP3NmYlkxp7JJxAzYJJZpocB6NzD+FHPDaQxi+8SwTEjsIwCn+1gq
 BKAzLFmdAQEAOw=='''
 
-
     def move(self, new_x, new_y):
         self.x = new_x
         self.y = new_y
