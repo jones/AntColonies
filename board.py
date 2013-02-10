@@ -80,64 +80,177 @@ imagedata = '''
     BQMEFPigAsoRBQM1BGLjRIiOGSxWBCmToCCMOXSW2HCBo8qWDQcvMMkzCNCbHQga/qMgAYIDBQZU
     yxYYEAA7
 '''
+antimage = '''R0lGODlhDgAOAHAAACH5BAEAAPwALAAAAAAOAA4AhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwAr
+ZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCq
+mQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMA
+zDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA
+/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YA
+AGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaA
+M2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/
+Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplV
+mZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnV
+zJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr
+/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zV
+AMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8r
+M/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+q
+Zv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAA
+AAh3APcJFJNJoMBMYgwqEzgpobKFBAUqi1FwHxo0AACgSbgvU4x9FPcRy5hx4aQbBsXEIEkyxo16
+BqERg7YiY4yHBnPuu2FTJ8ufP3NmYlkxp7JJxAzYJJZpocB6NzD+FHPDaQxi+8SwTEjsIwCn+1gq
+BKAzLFmdAQEAOw=='''
 
-
+wallimage = '''R0lGODlhDgAOAHAAACH5BAEAAPwALAAAAAAOAA4AhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwAr
+ZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCq
+mQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMA
+zDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA
+/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YA
+AGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaA
+M2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/
+Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplV
+mZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnV
+zJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr
+/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zV
+AMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8r
+M/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+q
+Zv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAA
+AAgzAN0JHEiwoMGDCBPSE7gwocB2AyG6azjRIEWEEt1ldHhQ4kWOGwXOi8ix5MCPBRduvBgQADs='''
 
 if __name__ == "__main__":
     root = tk.Tk()
     board = GameBoard(root)
     board.pack(side="top", fill="both", expand="true", padx=4, pady=4)
-    player1 = tk.PhotoImage(data=imagedata)
+    wall = tk.PhotoImage(data=wallimage)
 
-    board.addpiece("wa1", player1, 0,3)
-    board.addpiece("wa2", player1, 1,3)
-    board.addpiece("wa3", player1, 2,4)
-    board.addpiece("wa4", player1, 2,5)
-    board.addpiece("wa5", player1, 3,6)
-    board.addpiece("wa6", player1, 3,7)
-    board.addpiece("wa7", player1, 4,8)
-    board.addpiece("wa8", player1, 4,9)
-    board.addpiece("wa9", player1, 5,10)
-    board.addpiece("wa10", player1, 5,11)
-    board.addpiece("wa11", player1, 6,11)
-    board.addpiece("wa12", player1, 7,11)
-    board.addpiece("wa13", player1, 8,11)
-    board.addpiece("wa14", player1, 9,11)
-    board.addpiece("wa15", player1, 10,11)
-    board.addpiece("wa16", player1, 11,12)
-    board.addpiece("wa17", player1, 11,13)
-    board.addpiece("wa18", player1, 11,14)
-    board.addpiece("wa19", player1, 10,15)
-    board.addpiece("wa20", player1, 9,16)
-    board.addpiece("wa21", player1, 8,17)
-    board.addpiece("wa22", player1, 7,18)
-    board.addpiece("wa23", player1, 7,19)
+    board.addpiece("wa1", wall, 0,3)
+    board.addpiece("wa2", wall, 1,3)
+    board.addpiece("wa3", wall, 2,3)
+    board.addpiece("wa4", wall, 3,3)
+    board.addpiece("wa5", wall, 4,3)
+    board.addpiece("wa6", wall, 5,3)
+    board.addpiece("wa7", wall, 5,4)
+    board.addpiece("wa8", wall, 5,5)
+    board.addpiece("wa9", wall, 5,6)
+    board.addpiece("wa10", wall, 5,7)
+    board.addpiece("wa11", wall, 5,8)
+    board.addpiece("wa12", wall, 5,9)
+    board.addpiece("wa13", wall, 5,10)
+    board.addpiece("wa14", wall, 6,10)
+    board.addpiece("wa15", wall, 7,10)
+    board.addpiece("wa16", wall, 8,10)
+    board.addpiece("wa17", wall, 9,10)
+    board.addpiece("wa18", wall, 10,10)
+    board.addpiece("wa19", wall, 11,10)
+    board.addpiece("wa20", wall, 11,11)
+    board.addpiece("wa21", wall, 11,12)
+    board.addpiece("wa22", wall, 11,13)
+    board.addpiece("wa23", wall, 11,14)
+    board.addpiece("wa24", wall, 11,15)
+    board.addpiece("wa25", wall, 11,16)
+    board.addpiece("wa26", wall, 11,17)
+    board.addpiece("wa27", wall, 11,18)
+    board.addpiece("wa28", wall, 11,19)
 
+    board.addpiece("wa50", wall, 8,0)
+    board.addpiece("wa51", wall, 8,1)
+    board.addpiece("wa52", wall, 8,2)
+    board.addpiece("wa53", wall, 8,3)
+    board.addpiece("wa54", wall, 8,4)
+    board.addpiece("wa55", wall, 8,5)
+    board.addpiece("wa56", wall, 8,6)
+    board.addpiece("wa57", wall, 9,6)
+    board.addpiece("wa58", wall, 10,6)
+    board.addpiece("wa59", wall, 11,6)
+    board.addpiece("wa60", wall, 12,6)
+    board.addpiece("wa61", wall, 13,6)
+    board.addpiece("wa62", wall, 14,6)
+    board.addpiece("wa63", wall, 14,7)
+    board.addpiece("wa64", wall, 14,8)
+    board.addpiece("wa65", wall, 14,9)
+    board.addpiece("wa66", wall, 14,9)
+    board.addpiece("wa67", wall, 14,10)
+    board.addpiece("wa68", wall, 14,11)
+    board.addpiece("wa69", wall, 14,12)
+    board.addpiece("wa70", wall, 14,13)
+    board.addpiece("wa71", wall, 14,14)
+    board.addpiece("wa72", wall, 14,15)
+    board.addpiece("wa73", wall, 14,16)
+    board.addpiece("wa74", wall, 14,17)
+    board.addpiece("wa75", wall, 14,18)
+    board.addpiece("wa76", wall, 14,19)
 
-    board.addpiece("wa50", player1, 4,0)
-    board.addpiece("wa51", player1, 5,1)
-    board.addpiece("wa52", player1, 5,2)
-    board.addpiece("wa53", player1, 6,3)
-    board.addpiece("wa54", player1, 7,4)
-    board.addpiece("wa55", player1, 7,5)
-    board.addpiece("wa56", player1, 8,6)
-    board.addpiece("wa57", player1, 9,7)
-    board.addpiece("wa58", player1, 10,7)
-    board.addpiece("wa59", player1, 11,7)
-    board.addpiece("wa60", player1, 11,7)
-    board.addpiece("wa61", player1, 12,8)
-    board.addpiece("wa62", player1, 13,9)
-    board.addpiece("wa63", player1, 14,10)
-    board.addpiece("wa64", player1, 15,11)
-    board.addpiece("wa65", player1, 15,12)
-    board.addpiece("wa66", player1, 15,13)
-    board.addpiece("wa67", player1, 15,14)
-    board.addpiece("wa68", player1, 15,15)
-    board.addpiece("wa69", player1, 14,16)
-    board.addpiece("wa70", player1, 13,17)
-    board.addpiece("wa71", player1, 12,18)
-    board.addpiece("wa72", player1, 11,19)
+    board2  = [ [] for i in range(20) ]
 
-    print board.pieces["wa1"]
+    i = 0
+    while i < 20:
+        j = 0
+        while j < 20:
+            board2[i].append(j)
+            j = j + 1
+        i = i + 1
+
+    i = 0
+    while i < 20:
+        j = 0
+        while j < 20:
+            board2[i][j] = 0
+            j = j + 1
+        i = i + 1
+
+    board2[0][3] = 1
+    board2[1][3] = 1
+    board2[2][3] = 1
+    board2[3][3] = 1
+    board2[4][3] = 1
+    board2[5][3] = 1
+    board2[5][4] = 1
+    board2[5][5] = 1
+    board2[5][6] = 1
+    board2[5][7] = 1
+    board2[5][8] = 1
+    board2[5][9] = 1
+    board2[5][10] = 1
+    board2[6][10] = 1
+    board2[7][10] = 1
+    board2[8][10] = 1
+    board2[9][10] = 1
+    board2[10][10] = 1
+    board2[11][10] = 1
+    board2[11][11] = 1
+    board2[11][12] = 1
+    board2[11][13] = 1
+    board2[11][14] = 1
+    board2[11][15] = 1
+    board2[11][16] = 1
+    board2[11][17] = 1
+    board2[11][18] = 1
+    board2[11][19] = 1
+
+    board2[8][0] = 1
+    board2[8][1] = 1
+    board2[8][2] = 1
+    board2[8][3] = 1
+    board2[8][4] = 1
+    board2[8][5] = 1
+    board2[8][6] = 1
+    board2[9][6] = 1
+    board2[10][6] = 1
+    board2[11][6] = 1
+    board2[12][6] = 1
+    board2[13][6] = 1
+    board2[14][6] = 1
+    board2[14][7] = 1
+    board2[14][8] = 1
+    board2[14][9] = 1
+    board2[14][10] = 1
+    board2[14][11] = 1
+    board2[14][12] = 1
+    board2[14][13] = 1
+    board2[14][14] = 1
+    board2[14][15] = 1
+    board2[14][16] = 1
+    board2[14][17] = 1
+    board2[14][18] = 1
+    board2[14][19] = 1
+
+    antIMG = tk.PhotoImage(data=antimage)
 
     root.mainloop()
