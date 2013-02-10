@@ -25,7 +25,7 @@ BqERg7YiY4yHBnPuu2FTJ8ufP3NmYlkxp7JJxAzYJJZpocB6NzD+FHPDaQxi+8SwTEjsIwCn+1gq
 BKAzLFmdAQEAOw=='''
 
     def valid_move(self, new_x, new_y):
-        if new_x == -1 or new_y == -1 or new_x == length or new_y == length:
+        if new_x == -1 or new_y == -1 or new_x == self.length or new_y == self.length:
             return False
         for first in self.obj:
             for second in first:
@@ -72,10 +72,10 @@ BKAzLFmdAQEAOw=='''
                 self.y = new_y
             else:
                 self.make_rand_move()
-        
+
         newc = (self.x, self.y)
         self.movelist.append(newc)
         return newc
 
-   def get_movelist(self):
+    def get_movelist(self):
         return self.movelist

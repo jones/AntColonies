@@ -1,4 +1,5 @@
 import Tkinter as tk
+import Ant
 
 class GameBoard(tk.Frame):
     def __init__(self, parent, rows=20, columns=20, size=16, color1="white", color2="white"):
@@ -30,7 +31,7 @@ class GameBoard(tk.Frame):
 
     def placepiece(self, name, row, column):
         '''Place a piece at the given row/column'''
-        self.pieces[column + self.columns * row] = (row, column)
+        self.pieces[name] = (row, column)
         x0 = (column * self.size) + int(self.size/2)
         y0 = (row * self.size) + int(self.size/2)
         self.canvas.coords(name, x0, y0)
@@ -59,27 +60,7 @@ class GameBoard(tk.Frame):
 
 # image comes from the silk icon set which is under a Creative Commons
 # license. For more information see http://www.famfamfam.com/lab/icons/silk/
-imagedata = '''
-    R0lGODlhEAAQAOeSAKx7Fqx8F61/G62CILCJKriIHM+HALKNMNCIANKKANOMALuRK7WOVLWPV9eR
-    ANiSANuXAN2ZAN6aAN+bAOCcAOKeANCjKOShANKnK+imAOyrAN6qSNaxPfCwAOKyJOKyJvKyANW0
-    R/S1APW2APW3APa4APe5APm7APm8APq8AO28Ke29LO2/LO2/L+7BM+7BNO6+Re7CMu7BOe7DNPHA
-    P+/FOO/FO+jGS+/FQO/GO/DHPOjBdfDIPPDJQPDISPDKQPDKRPDIUPHLQ/HLRerMV/HMR/LNSOvH
-    fvLOS/rNP/LPTvLOVe/LdfPRUfPRU/PSU/LPaPPTVPPUVfTUVvLPe/LScPTWWfTXW/TXXPTXX/XY
-    Xu/SkvXZYPfVdfXaY/TYcfXaZPXaZvbWfvTYe/XbbvHWl/bdaPbeavvadffea/bebvffbfbdfPvb
-    e/fgb/Pam/fgcvfgePTbnfbcl/bfivfjdvfjePbemfjelPXeoPjkePbfmvffnvbfofjlgffjkvfh
-    nvjio/nnhvfjovjmlvzlmvrmpvrrmfzpp/zqq/vqr/zssvvvp/vvqfvvuPvvuvvwvfzzwP//////
-    ////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////yH+FUNyZWF0ZWQgd2l0aCBU
-    aGUgR0lNUAAh+QQBCgD/ACwAAAAAEAAQAAAIzAD/CRxIsKDBfydMlBhxcGAKNIkgPTLUpcPBJIUa
-    +VEThswfPDQKokB0yE4aMFiiOPnCJ8PAE20Y6VnTQMsUBkWAjKFyQaCJRYLcmOFipYmRHzV89Kkg
-    kESkOme8XHmCREiOGC/2TBAowhGcAyGkKBnCwwKAFnciCAShKA4RAhyK9MAQwIMMOQ8EdhBDKMuN
-    BQMEFPigAsoRBQM1BGLjRIiOGSxWBCmToCCMOXSW2HCBo8qWDQcvMMkzCNCbHQga/qMgAYIDBQZU
-    yxYYEAA7
-'''
+
 antimage = '''R0lGODlhDgAOAHAAACH5BAEAAPwALAAAAAAOAA4AhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwAr
 ZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCq
 mQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMA
@@ -252,5 +233,11 @@ if __name__ == "__main__":
     board2[14][19] = 1
 
     antIMG = tk.PhotoImage(data=antimage)
+    ant1 = Ant.Ant(0,0,board2,20)
+    board.addpiece("ant1", antIMG, ant1.x, ant1.y)
+
+    ant1.make_rand_move()
+    board.addpiece("ant1", antIMG, ant1.x, ant1.y)
+
 
     root.mainloop()
