@@ -27,10 +27,9 @@ BKAzLFmdAQEAOw=='''
     def valid_move(self, new_x, new_y):
         if new_x == -1 or new_y == -1 or new_x == self.length or new_y == self.length:
             return False
-        for first in self.obj:
-            for second in first:
-                if self.obj[first][second] == 1:
-                    return False
+        if self.obj[new_x][new_y] == 1:
+            return False
+
         return True
 
     """def valid_move(self, new_x, new_y):
