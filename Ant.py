@@ -1,6 +1,6 @@
 import random
 class Ant:
-    def __init__(self, x_coord, y_coord, imagedata):
+    def __init__(self, x_coord, y_coord):
         self.x = x_coord
         self.y = y_coord
         self.imagedata = "R0lGODlhEAAQAPcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBV
