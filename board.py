@@ -58,6 +58,14 @@ class GameBoard(tk.Frame):
         self.canvas.tag_raise("piece")
         self.canvas.tag_lower("square")
 
+    def updatee(self):
+        #self.canvas.delete(ALL)
+        #for row in range(self.rows):
+            #for col in range(self.columns):
+                #self.canvas.create.rectangle(col, row, col+self.size, row+self.size,  outline="black", fill=color, tags="square")
+        for name in self.pieces:
+            self.placepiece(name, self.pieces[name][0], self.pieces[name][1])
+
 
 # image comes from the silk icon set which is under a Creative Commons
 # license. For more information see http://www.famfamfam.com/lab/icons/silk/
@@ -236,14 +244,17 @@ if __name__ == "__main__":
     antIMG = tk.PhotoImage(data=antimage)
     ant1 = Ant.Ant(0,0,board2,20)
     board.addpiece("ant1", antIMG, ant1.x, ant1.y)
+    board.updatee()
+
+    #root.mainloop()
+
+    ii = 0
+    while ii < 10:
+        ant1.make_rand_move()
+        board.addpiece("ant1", antIMG, ant1.x, ant1.y)
+        board.updatee()
+        #time.sleep(0.5)
+        ii+=1
 
 
     root.mainloop()
-
-    ii = 0
-    while True:
-        ant1.make_rand_move()
-        board.addpiece("ant1", antIMG, ant1.x, ant1.y)
-        time.sleep(0.5)
-
-
