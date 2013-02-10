@@ -30,7 +30,7 @@ class GameBoard(tk.Frame):
 
     def placepiece(self, name, row, column):
         '''Place a piece at the given row/column'''
-        self.pieces[name] = (row, column)
+        self.pieces[column + self.columns * row] = (row, column)
         x0 = (column * self.size) + int(self.size/2)
         y0 = (row * self.size) + int(self.size/2)
         self.canvas.coords(name, x0, y0)
