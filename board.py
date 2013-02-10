@@ -1,5 +1,4 @@
 import Tkinter as tk
-#import Ant.py
 
 class GameBoard(tk.Frame):
     def __init__(self, parent, rows=20, columns=20, size=16, color1="white", color2="white"):
@@ -139,6 +138,6 @@ if __name__ == "__main__":
     board.addpiece("wa71", player1, 12,18)
     board.addpiece("wa72", player1, 11,19)
 
-
+    print board.pieces["wa1"]
 
     root.mainloop()
