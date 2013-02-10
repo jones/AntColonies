@@ -26,16 +26,9 @@ BKAzLFmdAQEAOw=='''
         self.x = new_x
         self.y = new_y
 
-    def collision(self, wall, x=self.x, y=self.y):
-        if x == wall.x and y == wall.y:
-            return False
-        return True
-
     def make_rand_move(self):
         foo = random.randint(0, 7)
         if foo==0:
-            new_x, new_y = self.x-1, self.y-1
-            collision(
             move(self.x-1, self.y-1)
         elif foo==1:
             move(self.x, self.y-1)
