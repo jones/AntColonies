@@ -1,8 +1,9 @@
 import random
 class Ant:
-    def __init__(self, x_coord, y_coord, imagedata):
+    def __init__(self, x_coord, y_coord):
         self.x = x_coord
         self.y = y_coord
+        self.movelist = [(self.x, self.y)]
         self.imagedata = "R0lGODlhEAAQAPcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBV
 ZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDV
 mQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMr
@@ -42,3 +43,10 @@ IBF+5EiToEeFMV1ibDkyIAA7"
             move(self.x-1, self.y+1)
         else:
             move(self.x-1, self.y)
+        
+        newc = (self.x, self.y)
+        self.movelist.append()
+        return newc
+
+   def get_movelist(self):
+        return self.movelist
