@@ -1,5 +1,5 @@
 import random
-class Ant():
+class Ant:
     def __init__(self, x_coord, y_coord, imagedata):
         self.x = x_coord
         self.y = y_coord
