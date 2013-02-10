@@ -27,11 +27,20 @@ BKAzLFmdAQEAOw=='''
     def valid_move(self, new_x, new_y):
         if new_x == -1 or new_y == -1 or new_x == length or new_y == length:
             return False
+        for first in self.obj:
+            for second in first:
+                if self.obj[first][second] == 1:
+                    return False
+        return True
+
+    """def valid_move(self, new_x, new_y):
+        if new_x == -1 or new_y == -1 or new_x == length or new_y == length:
+            return False
         for thing in self.obj:
             foo, bar = thing.x, thing.y
             if new_x == foo or new_y == bar:
                 return False
-        return True
+        return True"""
 
     def move(self, new_x, new_y):
         self.x = new_x
