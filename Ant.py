@@ -4,7 +4,7 @@ class Ant:
         self.x = x_coord
         self.y = y_coord
         self.movelist = [(self.x, self.y)]
-        self.imagedata = "R0lGODlhEAAQAPcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBV
+        self.imagedata = '''R0lGODlhEAAQAPcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBV
 ZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDV
 mQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMr
 zDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq
@@ -19,11 +19,13 @@ AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9V
 M/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//V
 Zv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAACH5BAEAAPwALAAAAAAQABAA
 AAhGAPcJ3Adg4MCCBg8mJGgQocCCACA2ZHgwokOKFC1afJhQo8eLHTcuDBlx4ceTIitqHNkwpUmU
-IBF+5EiToEeFMV1ibDkyIAA7"
+IBF+5EiToEeFMV1ibDkyIAA7'''
 
     def move(self, new_x, new_y):
         self.x = new_x
         self.y = new_y
+
+    def collision(self, 
 
     def make_rand_move(self):
         foo = random.randint(0, 7)
@@ -45,7 +47,7 @@ IBF+5EiToEeFMV1ibDkyIAA7"
             move(self.x-1, self.y)
         
         newc = (self.x, self.y)
-        self.movelist.append()
+        self.movelist.append(newc)
         return newc
 
    def get_movelist(self):
