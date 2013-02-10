@@ -1,5 +1,5 @@
 import Tkinter as tk
-import Ant.py
+#import Ant.py
 
 class GameBoard(tk.Frame):
     def __init__(self, parent, rows=20, columns=20, size=16, color1="white", color2="white"):
