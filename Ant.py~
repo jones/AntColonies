@@ -45,7 +45,7 @@ IBF+5EiToEeFMV1ibDkyIAA7"
             move(self.x-1, self.y)
         
         newc = (self.x, self.y)
-        self.movelist.append()
+        self.movelist.append(newc)
         return newc
 
    def get_movelist(self):
