@@ -1,8 +1,10 @@
 import random
 class Ant:
-    def __init__(self, x_coord, y_coord):
+    def __init__(self, x_coord, y_coord, object_list, board_length):
         self.x = x_coord
         self.y = y_coord
+        self.obj = object_list
+        self.length = board_length
         self.movelist = [(self.x, self.y)]
         self.imagedata = '''R0lGODlhDgAOAHAAACH5BAEAAPwALAAAAAAOAA4AhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwAr
 ZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCq
@@ -22,28 +24,45 @@ AAh3APcJFJNJoMBMYgwqEzgpobKFBAUqi1FwHxo0AACgSbgvU4x9FPcRy5hx4aQbBsXEIEkyxo16
 BqERg7YiY4yHBnPuu2FTJ8ufP3NmYlkxp7JJxAzYJJZpocB6NzD+FHPDaQxi+8SwTEjsIwCn+1gq
 BKAzLFmdAQEAOw=='''
 
+    def valid_move(self, new_x, new_y):
+        if new_x == -1 or new_y == -1 or new_x == length or new_y == length:
+            return False
+        for thing in self.obj:
+            foo, bar = thing.x, thing.y
+            if new_x == foo or new_y == bar:
+                return False
+        return True
+
     def move(self, new_x, new_y):
         self.x = new_x
         self.y = new_y
 
     def make_rand_move(self):
-        foo = random.randint(0, 7)
-        if foo==0:
-            move(self.x-1, self.y-1)
-        elif foo==1:
-            move(self.x, self.y-1)
-        elif foo==2:
-            move(self.x+1, self.y-1)
-        elif foo==3:
-            move(self.x+1, self.y)
-        elif foo==4:
-            move(self.x+1, self.y+1)
-        elif foo==5:
-            move(self.x, self.y+1)
-        elif foo==6:
-            move(self.x-1, self.y+1)
-        else:
-            move(self.x-1, self.y)
+        foo = random.randint(0, 3)
+        if foo == 0:
+            new_x = self.x+1
+            if valid_move(new_x, self.y):
+                self.x = new_x
+            else:
+                self.make_rand_move()
+        if foo == 1:
+            new_x = self.x-1
+            if valid_move(new_x, self.y):
+                self.x = new_x
+            else:
+                self.make_rand_move()
+        if foo == 2:
+            new_y = self.y+1
+            if valid_move(self.x, new_y):
+                self.y = new_y
+            else:
+                self.make_rand_move()
+        if foo == 3:
+            new_y = self.y-1
+            if valid_move(self.x, new_y):
+                self.y = new_y
+            else:
+                self.make_rand_move()
         
         newc = (self.x, self.y)
         self.movelist.append(newc)
